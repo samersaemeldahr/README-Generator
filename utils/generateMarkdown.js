@@ -26,19 +26,17 @@ function generateMarkdown(data) {
   
   
   ## Installation
-  ${data.installation}
+  ${data.install}
   
   ## Usage 
   
   ${data.usage}
   
-  ` ```md
-  ![alt text](assets/images/screenshot.png)
-  ``` `
+
   
   
   ## Credits
-  ${data.credits}
+
   
   ## License
   
@@ -47,7 +45,7 @@ function generateMarkdown(data) {
   
   ## Badges
   
-  ![badmath](https://img.shields.io/github/languages/top/${data.githubUserName}/${data.githubRepoName})
+  ![badmath](https://img.shields.io/github/languages/top/${data.github}/${data.title})
   ![badmath](https://img.shields.io/github/languages/count/nielsenjared/badmath)
   
   ## Features
