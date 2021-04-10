@@ -11,11 +11,14 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
+
+
+
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.title.toUpperCase()}
 
   ## Description 
-  ${data.description}
+  ${data.description}.
   
   ## Table of Contents (Optional)
   

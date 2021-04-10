@@ -40,7 +40,7 @@ const questions = [
       },
       {
         type: 'input',
-        name: 'install',
+        name: 'install',  
         message: 'What command would you use to install dependencies?',
       },
       {
