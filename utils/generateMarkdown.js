@@ -1,8 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-
+// const index = require('../index.js')
 // ["GNU Affero General Public License v3.0", "GNU General Public License v3.0", "GNU Lesser General Public License v3.0", "Mozilla Public License 2.0", "Apache License 2.0", "MIT License", "Boost Software License 1.0", "GNU", "The Unlicense", "None"]
-
+// const data = require('questions')
 function renderLicenseBadge(license) {
 
 }
@@ -11,39 +11,39 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   let link = "";
-  if (data.license === "GNU Affero General Public License v3.0") {
+  if (license === "GNU Affero General Public License v3.0") {
     let link = `[More information about about the license](https://choosealicense.com/licenses/agpl-3.0/)`;
     return link;
   }
-  if (data.license === "GNU General Public License v3.0") {
+  if (license === "GNU General Public License v3.0") {
     let link = `[More information about about the license](https://choosealicense.com/licenses/gpl-3.0/)`;
     return link;
   }
-  if (data.license === "GNU Lesser General Public License v3.0") {
+  if (license === "GNU Lesser General Public License v3.0") {
     let link = `[More information about about the license](https://choosealicense.com/licenses/lgpl-3.0/)`;
     return link;
   }
-  if (data.license === "Mozilla Public License 2.0") {
+  if (license === "Mozilla Public License 2.0") {
     let link = `[More information about about the license](https://choosealicense.com/licenses/mpl-2.0/)`;
     return link;
   }
-  if (data.license === "Apache License 2.0") {
+  if (license === "Apache License 2.0") {
     let link = `[More information about about the license](https://choosealicense.com/licenses/apache-2.0/)`;
     return link;
   }
-  if (data.license === "MIT License") {
+  if (license === "MIT License") {
     let link = `[More information about about the license](https://choosealicense.com/licenses/mit/)`;
     return link;
   }
-  if (data.license === "Boost Software License 1.0") {
+  if (license === "Boost Software License 1.0") {
     let link = `[More information about about the license](https://choosealicense.com/licenses/bsl-1.0/)`;
     return link;
   }
-  if (data.license === "The Unlicense") {
+  if (license === "The Unlicense") {
     let link = `[More information about about the license](https://choosealicense.com/licenses/unlicense/)`;
     return link;
   }
-  if (data.license === "None") {
+  if (license === "None") {
     return link;
   }
 }
@@ -54,9 +54,10 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 
-
-
 function generateMarkdown(data) {
+
+  licenseSelection = renderLicenseLink(data.license)
+
   return `#**${data.title.toUpperCase()}**
 
   ## Description 
@@ -84,7 +85,8 @@ function generateMarkdown(data) {
   
   ## License
   
-  ${data.license}
+  This application is covered under ${data.license}
+  ${licenseSelection}
   
   
   ## Badges
