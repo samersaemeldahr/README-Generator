@@ -36,7 +36,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What kind of license would you like to choose?',
-        choices: ["None", "MIT", "Apache", "Artistic", "BSD2", "BSD3", "Creative Commons", "Mozilla Public", "Open Software", "GNU", "Do What The F*ck You Want To Public License"]
+        choices: ["Eclipse", "MIT", "BSD2", "BSD3", "Creative Commons", "Mozilla Public", "Boost Software", "GNU", "The Unlicense"]
       },
       {
         type: 'input',
@@ -76,6 +76,8 @@ function init() {
     writeToFile(readmeContent)
   })
 }
+
+module.exports = questions;
 
 // Function call to initialize app
 init();
