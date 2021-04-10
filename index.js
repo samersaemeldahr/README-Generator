@@ -9,6 +9,11 @@ const util = require('./utils/generateMarkdown')
 const questions = [
       {
         type: 'input',
+        name: 'greet',
+        message: 'Welcome to README generator. please hit ENTER to start.',
+      },
+      {
+        type: 'input',
         name: 'github',
         message: 'What is your GitHub username?',
       },
@@ -36,7 +41,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What kind of license would you like to choose?',
-        choices: ["Eclipse", "MIT", "BSD2", "BSD3", "Creative Commons", "Mozilla Public", "Boost Software", "GNU", "The Unlicense"]
+        choices: ["GNU Affero General Public License v3.0", "GNU General Public License v3.0", "GNU Lesser General Public License v3.0", "Mozilla Public License 2.0", "Apache License 2.0", "MIT License", "Boost Software License 1.0", "GNU", "The Unlicense", "None"]
       },
       {
         type: 'input',
