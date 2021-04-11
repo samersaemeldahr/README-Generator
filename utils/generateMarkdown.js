@@ -119,16 +119,23 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license === "None") {
-    var link = ``;
-    return link;
+    return "";
   } else if (license !== "None") {
     let licenseSelection = renderLicenseLink(license);
     return `
 ## License
   
-This application is covered under ${license}
-${licenseSelection}`;
+This application is covered under ${license}<br>${licenseSelection}`;
 
+  }
+}
+
+// Create a function to show license in the table of contents
+function licenseTable(license) {
+  if (license === "None") {
+    return "";
+  } else if (license !== "None") {
+    return `* [License](#license)`;
   }
 }
 
@@ -140,6 +147,7 @@ function generateMarkdown(data) {
   // let licenseSelection = renderLicenseLink(data.license)
    let licenseBadge = renderLicenseBadge(data.license)
    let createLicense = renderLicenseSection(data.license)
+   let licenseContent = licenseTable(data.license)
 
   return `# **${data.title.toUpperCase()}**
 
@@ -155,7 +163,7 @@ function generateMarkdown(data) {
   * [Installation](#installation)
   * [Usage](#usage)
   * [Credits](#credits)
-  * [License](#license)
+  ${licenseContent}
   
   
   ## Installation
