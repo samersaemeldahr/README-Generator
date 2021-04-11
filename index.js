@@ -61,7 +61,7 @@ const questions = [
       {
         type: 'input',
         name: 'contribution',
-        message: 'What do you want the user to know about contributing this repository?',
+        message: 'What do you want the user to know about contributing to this repository?',
       },
 ];
 

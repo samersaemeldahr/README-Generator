@@ -1,39 +1,24 @@
 /*
-
-    GIVEN a command-line application that accepts user input
-    WHEN I am prompted for information about my application repository
-    THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-    WHEN I enter my project title
-    THEN this is displayed as the title of the README
-    WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-    THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-    WHEN I choose a license for my application from a list of options
-    THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-    WHEN I enter my GitHub username
-    THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-    WHEN I enter my email address
-    THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-    WHEN I click on the links in the Table of Contents
-    THEN I am taken to the corresponding section of the README
-
-
-
+GIVEN a command-line application that accepts user input
+WHEN I am prompted for information about my application repository
+THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+WHEN I enter my project title
+THEN this is displayed as the title of the README
+WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
+THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
+WHEN I choose a license for my application from a list of options
+THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
+WHEN I enter my GitHub username
+THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
+WHEN I enter my email address
+THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
+WHEN I click on the links in the Table of Contents
+THEN I am taken to the corresponding section of the README
+*/
 
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-// const index = require('../index.js')
-// ["GNU Affero General Public License v3.0", "GNU General Public License v3.0", "GNU Lesser General Public License v3.0", "Mozilla Public License 2.0", "Apache License 2.0", "MIT License", "Boost Software License 1.0", "GNU", "The Unlicense", "None"]
-// const data = require('questions')
-function renderLicenseBadge(badge) {
-  let link = "";
-  if (!badge) {
-    return link;
-  } else {
-    let link = `![License: ${}](https://img.shields.io/badge/license-Unlicense-blue.svg)`;
-    return link;
-  }
-}*/
 
 function renderLicenseBadge(badge) {
   let link = "";
@@ -144,7 +129,6 @@ function licenseTable(license) {
 
 function generateMarkdown(data) {
 
-  // let licenseSelection = renderLicenseLink(data.license)
    let licenseBadge = renderLicenseBadge(data.license)
    let createLicense = renderLicenseSection(data.license)
    let licenseContent = licenseTable(data.license)
@@ -162,9 +146,11 @@ function generateMarkdown(data) {
   
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Credits](#credits)
   ${licenseContent}
-  
+  * [Features](#features)  
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions) 
   
   ## Installation
   ${data.install}
@@ -174,19 +160,14 @@ function generateMarkdown(data) {
   
   ${createLicense}
   
-  ## Credits
-
-  
-  ## Features
-  
-  
   ## Contributing
-  
+  ${data.contribution}
   
   ## Tests
+  ${data.test}
 
   ## Questions
-  Please feel free to reach out with any questions via [Email](mailto:${data.email}) or [GitHub](https://www.github.com/${data.github})
+  Please feel free to reach out with any questions via [email](mailto:${data.email}) or [GitHub](https://www.github.com/${data.github})
 
 `;
 }
