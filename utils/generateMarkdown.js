@@ -1,10 +1,77 @@
+/*
+
+    GIVEN a command-line application that accepts user input
+    WHEN I am prompted for information about my application repository
+    THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+    WHEN I enter my project title
+    THEN this is displayed as the title of the README
+    WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
+    THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
+WHEN I choose a license for my application from a list of options
+THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
+WHEN I enter my GitHub username
+THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
+WHEN I enter my email address
+THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
+WHEN I click on the links in the Table of Contents
+THEN I am taken to the corresponding section of the README
+
+
+
+
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 // const index = require('../index.js')
 // ["GNU Affero General Public License v3.0", "GNU General Public License v3.0", "GNU Lesser General Public License v3.0", "Mozilla Public License 2.0", "Apache License 2.0", "MIT License", "Boost Software License 1.0", "GNU", "The Unlicense", "None"]
 // const data = require('questions')
-function renderLicenseBadge(license) {
+function renderLicenseBadge(badge) {
+  let link = "";
+  if (!badge) {
+    return link;
+  } else {
+    let link = `![License: ${}](https://img.shields.io/badge/license-Unlicense-blue.svg)`;
+    return link;
+  }
+}*/
 
+function renderLicenseBadge(badge) {
+  let link = "";
+  if (badge === "GNU Affero General Public License v3.0") {
+    let link = `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)`;
+    return link;
+  }
+  if (badge === "GNU General Public License v3.0") {
+    let link = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+    return link;
+  }
+  if (badge === "GNU Lesser General Public License v3.0") {
+    let link = `[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)`;
+    return link;
+  }
+  if (badge === "Mozilla Public License 2.0") {
+    let link = `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
+    return link;
+  }
+  if (badge === "Apache License 2.0") {
+    let link = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+    return link;
+  }
+  if (badge === "MIT License") {
+    let link = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+    return link;
+  }
+  if (badge === "Boost Software License 1.0") {
+    let link = `[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`;
+    return link;
+  }
+  if (badge === "The Unlicense") {
+    let link = `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`;
+    return link;
+  }
+  if (badge === "None") {
+    return link;
+  }
 }
 
 // TODO: Create a function that returns the license link
@@ -57,8 +124,13 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
 
   licenseSelection = renderLicenseLink(data.license)
+  licenseBadge = renderLicenseBadge(data.license)
 
-  return `#**${data.title.toUpperCase()}**
+  return `# **${data.title.toUpperCase()}**
+
+  ${licenseBadge}
+  ![badmath](https://img.shields.io/github/languages/top/${data.github}/${data.title})
+  ![badmath](https://img.shields.io/github/languages/count/${data.github}/${data.title})
 
   ## Description 
   ${data.description}
@@ -88,11 +160,7 @@ function generateMarkdown(data) {
   This application is covered under ${data.license}
   ${licenseSelection}
   
-  
-  ## Badges
-  
-  ![badmath](https://img.shields.io/github/languages/top/${data.github}/${data.title})
-  ![badmath](https://img.shields.io/github/languages/count/nielsenjared/badmath)
+
   
   ## Features
   
