@@ -6,7 +6,11 @@
 
   ## Description 
   A command-line application that generates a README file dynamically based on the user's input.
-  
+
+  ![Terminal Screenshot](./Assets/terminal-screenshot.png)
+
+  ![Readme Screenshot](./Assets/readme-screenshot.png)
+
   ## Table of Contents
   
   * [Installation](#installation)
@@ -26,9 +30,9 @@
   1. A greeting message will appear, hit `enter` to start
   1. The user is prompted to answer several questions to create the content of the README file
   1. After answering all the questions, the app shows this message `Successfully created README.md!`
-  1. The file will be created in the same root directory of the application
+  1. The file will be created in the same root directory of the application in the generated folder
 
-Please refer to this video for an in-depth functionality of the application
+Please refer to this [video](https://drive.google.com/file/d/1L3PUFg88L-oRWQ2JoAoX8KKZgJ65XpAg/view) for an in-depth functionality of the application
   
   
 ## License
