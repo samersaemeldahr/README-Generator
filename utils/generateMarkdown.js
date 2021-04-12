@@ -147,7 +147,6 @@ function generateMarkdown(data) {
   * [Installation](#installation)
   * [Usage](#usage)
   ${licenseContent}
-  * [Features](#features)  
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions) 

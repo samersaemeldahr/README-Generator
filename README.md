@@ -11,8 +11,7 @@
   
   * [Installation](#installation)
   * [Usage](#usage)
-  * [License](#license)
-  * [Features](#features)  
+  * [License](#license) 
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions) 
@@ -23,12 +22,13 @@
   1. Run `npm install` to install dependencies
   
   ## Usage 
-  1. Write node index.js in the command line to start the application
-  1. A greeting message will appear, hit enter to start
+  1. Write `node index.js` in console to start the application
+  1. A greeting message will appear, hit `enter` to start
   1. The user is prompted to answer several questions to create the content of the README file
   1. After answering all the questions, the app shows this message `Successfully created README.md!`
-  1. The file would be created in the same root directory of the application
-  1. Please refer to this video for an in-depth functionality of the application
+  1. The file will be created in the same root directory of the application
+
+Please refer to this video for an in-depth functionality of the application
   
   
 ## License
